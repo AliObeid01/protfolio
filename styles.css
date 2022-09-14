@@ -154,6 +154,12 @@
     justify-content: center;
     flex-direction: column;
   }
+
+  .contact > ul {
+
+    font-size: 35px;
+    margin-bottom: 40px;
+  }
   
   .contact > h1 {
     color: #2C3E50;
@@ -182,7 +188,6 @@
       border-radius: 4px;
       resize: vertical;
     }
-
 
   .btn{
     background-color: transparent;
@@ -213,8 +218,8 @@
 .info {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px 10vw;
+  justify-content:space-around;
+  padding: 30px 10vw;
   background-color: #2C3E50;
   color: #fff;
   width: 100%;
@@ -240,6 +245,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 30px 10vw;
   background-color: #091a2b;
   color: #fff;
   width: 100%;
