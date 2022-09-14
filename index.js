@@ -6,8 +6,6 @@ const message=document.getElementById("message");
 const validate=document.getElementById("validate");
 
 
-//var mailformat ='[a-z0-9]{3,}+@[a-z0-9]{5,}'
-
 send.addEventListener('click', check_validate);
 
 function check_validate(){
@@ -21,11 +19,18 @@ function check_validate(){
         validate.innerHTML=`Please enter message of maximum 100 character`
     }
 
-    else if (phone.value.length== "" || phone.value.length<11 || phone.value.substring(0,3)=='+961'){
+    else if (phone.value.length== "" || phone.value.length<12  || phone.value.substring(0,4)!='+961'){
         validate.innerHTML=`Please enter a phone number starting with +961 follow with 8 digit`
     }
 
     else{
+
+        fetch('http://localhost/protfolio/add_contact_info.php',{
+            method:'POST',
+            body:new URLSearchParams({"name":fname.value,"email":email.value,"phone":phone.value,"message":message.value}),
+        }).then(result => result.json())
+        .then(data => console.log(data))
         validate.innerHTML=`Your message has been submit.Thank you :)`
+        
     }
 }
